@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Letter for You</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #fdfaf6;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      transition: background-color 0.5s, color 0.5s;
+      overflow: hidden;
+    }
+
+    .envelope-container {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .envelope-container:hover {
+      transform: scale(1.05);
+    }
+
+    .envelope-img {
+      width: 160px;
+      height: auto;
+    }
+
+    .letter {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      background: #fff8ef;
+      border: 2px solid #e0d5c2;
+      border-radius: 12px;
+      padding: 40px 30px;
+      max-width: 600px;
+      width: 90%;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      line-height: 1.7;
+      white-space: pre-wrap;
+      animation: fadeIn 1s forwards;
+    }
+
+    .signature {
+      margin-top: 3em;
+      text-align: right;
+    }
+
+    .toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 1.5em;
+      cursor: pointer;
+      z-index: 99;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    body.night {
+      background-color: #1a1a1a;
+      color: #f5f5f5;
+    }
+
+    body.night .letter {
+      background: #2b2b2b;
+      border-color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="toggle" onclick="toggleMode()">🌙</button>
+
+  <!-- Envelope View -->
+  <div class="envelope-container" id="envelope" onclick="openLetter()">
+    <img src="envelope.png" alt="Open Letter" class="envelope-img">
+  </div>
+
+  <!-- Letter View -->
+  <div class="letter" id="letter">
+    <h1>To You, My Favourite Human</h1>
+
+    <p>
+I couldn’t wrap a gift or send a kiss through the screen,  
+so I wrote you this — in the language of the web,  
+hoping somewhere between these tags and types,  
+you'll hear my heart whisper: "Happy Birthday, BB."
+
+i dont know this thing its from chatgpt😭
+  lalala im bit yk but im trying lets hope everything will turn out good
+      if this does not turn out like we planned
+      dont be like yk
+      wtvr its a happpyyyy day no nonsense talks
+      Happyyyyyy birthdaaayyyyyyy rohannnnn
+    </p>
+
+    <div class="signature">
+      With Love,<br />
+      — Neeraja 🕯️
+    </div>
+  </div>
+
+  <script>
+    function openLetter() {
+      document.getElementById('envelope').style.display = 'none';
+      document.getElementById('letter').style.display = 'flex';
+    }
+
+    function toggleMode() {
+      document.body.classList.toggle('night');
+    }
+  </script>
+
+</body>
+</html>
